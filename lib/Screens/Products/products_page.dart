@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingbucket/Screens/Account/accoutn_page.dart';
 
 class PruductsPage extends StatefulWidget {
   const PruductsPage({super.key});
