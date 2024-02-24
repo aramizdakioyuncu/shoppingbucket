@@ -1,9 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 //Screen Imports
-import 'package:shoppingbucket/Screens/Products/products_page.dart';
+import 'package:shoppingbucket/Screens/home_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -15,17 +13,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-
-
-  void openpruductspage(){
-     Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const PruductsPage()),
-                );
+  void openpruductspage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+    );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +28,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-                onPressed: openpruductspage,
-                child: 
-                  Text("asd"),
-                ),
+              onPressed: openpruductspage,
+              child: const Text("asd"),
+            ),
           ],
         ),
       ),
