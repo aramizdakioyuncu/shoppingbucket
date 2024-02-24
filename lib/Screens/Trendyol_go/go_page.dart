@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shoppingbucket/Screens/Account/accoutn_page.dart';
 
-class PruductsPage extends StatefulWidget {
-  const PruductsPage({super.key});
+class GoPage extends StatefulWidget {
+  const GoPage({super.key});
 
   @override
-  State<PruductsPage> createState() => _PruductsPage();
+  State<GoPage> createState() => _GoPage();
 }
 
-class _PruductsPage extends State<PruductsPage> {
+class _GoPage extends State<GoPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -16,7 +16,7 @@ class _PruductsPage extends State<PruductsPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Products sayfasına hoşgeldin"),
+            Text("trendyol go"),
             
           ],
         ),

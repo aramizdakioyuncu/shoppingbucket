@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shoppingbucket/Screens/Account/accoutn_page.dart';
+import 'package:shoppingbucket/Screens/Bucket/bucket.dart';
+import 'package:shoppingbucket/Screens/Favorite/Favorite_page.dart';
 import 'package:shoppingbucket/Screens/Products/products_page.dart';
+import 'package:shoppingbucket/Screens/Trendyol_go/go_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,6 +66,9 @@ class _HomePage extends State<HomePage> {
           controller: _pageController,
           children: const [
             PruductsPage(),
+            GoPage(),
+            FavPage(),
+            bucketPage(),
             AccountPage(),
           ],
         ),
