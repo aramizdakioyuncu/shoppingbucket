@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppingbucket/Screens/Account/accoutn_page.dart';
 import 'package:shoppingbucket/Screens/Bucket/bucket.dart';
 import 'package:shoppingbucket/Screens/Favorite/Favorite_page.dart';
+import 'package:shoppingbucket/Screens/Products/man_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/products_page.dart';
 import 'package:shoppingbucket/Screens/Trendyol_go/go_page.dart';
 
@@ -63,6 +64,7 @@ class _HomePage extends State<HomePage> {
       ),
       body: Center(
         child: PageView(
+          physics: const NeverScrollableScrollPhysics(),
           controller: _pageController,
           children: const [
             PruductsPage(),
@@ -70,6 +72,7 @@ class _HomePage extends State<HomePage> {
             FavPage(),
             bucketPage(),
             AccountPage(),
+            ManCatogry(),
           ],
         ),
       ),
