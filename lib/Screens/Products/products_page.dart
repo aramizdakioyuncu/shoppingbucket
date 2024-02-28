@@ -1,13 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shoppingbucket/Models/product.dart';
-import 'package:shoppingbucket/Screens/Products/man_catogry.dart';
-import 'package:shoppingbucket/Screens/Products/woman_catogry.dart';
 
 class PruductsPage extends StatefulWidget {
-  const PruductsPage({Key? key}) : super(key: key);
-
+  const PruductsPage({Key? key, required this.asd}) : super(key: key);
+  final PageController asd;
   @override
   State<PruductsPage> createState() => _PruductsPageState();
 }
@@ -47,28 +43,42 @@ class _PruductsPageState extends State<PruductsPage> {
   }
 
   void openManCatogry() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ManCatogry()));
+    widget.asd.jumpToPage(5);
   }
 
   void openWomanCatogry() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const WomanCatogry()));
+    widget.asd.jumpToPage(6);
+  }
+  void openElectroCatogry() {
+    widget.asd.jumpToPage(7);
   }
 
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ElevatedButton(
-              onPressed: openManCatogry,
-              child: const Text("erkek"),
-            ),
-            ElevatedButton(
-              onPressed: openWomanCatogry,
-              child: const Text("kadın"),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: openManCatogry,
+                    child: const Text("Erkek"),
+                  ),
+                  ElevatedButton(
+                    onPressed: openWomanCatogry,
+                    child: const Text("Kadın"),
+                  ),
+                  ElevatedButton(
+                    onPressed: openElectroCatogry,
+                    child: const Text("Elektronik"),
+                  ),
+                  // Buraya istediğiniz kadar buton ekleyebilirsiniz
+                ],
+              ),
             ),
             SizedBox(
               height: 220,
