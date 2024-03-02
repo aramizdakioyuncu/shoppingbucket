@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String name; //urun ismi
-  final String descreption; //urun aciklamasi
+  final String name;
+  final String descreption;
   final double price;
   final String image;
 
@@ -10,7 +10,6 @@ class Product {
 
   double indirim(double indirimorani) {
     double yenifiyat = (price * (100 - indirimorani) / 100);
-    // var formatter = NumberFormat(',###.##');
     return yenifiyat;
   }
 
@@ -18,7 +17,9 @@ class Product {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        color: Colors.black,
+        decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 133, 132, 132),
+            borderRadius: BorderRadius.all(Radius.circular(11))),
         child: Column(
           children: [
             Image.network(image, height: 140, width: 150, fit: BoxFit.cover),
@@ -39,7 +40,7 @@ class Product {
                 ),
                 Text(
                   indirim(20).toString() + " TL",
-                  style: TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Colors.red),
                 ),
               ],
             ),

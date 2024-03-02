@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //Screen Imports
-import 'package:shoppingbucket/Screens/home_page.dart';
+import 'package:shoppingbucket/Screens/Home/home_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

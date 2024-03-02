@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shoppingbucket/Screens/Account/accoutn_page.dart';
 import 'package:shoppingbucket/Screens/Bucket/bucket.dart';
 import 'package:shoppingbucket/Screens/Favorite/Favorite_page.dart';
+import 'package:shoppingbucket/Screens/Home/NotificationButton_page.dart';
+import 'package:shoppingbucket/Screens/Products/Sport_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/electronic_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/man_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/products_page.dart';
+import 'package:shoppingbucket/Screens/Products/supermarket_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/woman_catogry.dart';
 import 'package:shoppingbucket/Screens/Trendyol_go/go_page.dart';
 
@@ -26,6 +29,8 @@ class _HomePage extends State<HomePage> {
       _pageController.jumpToPage(page);
     });
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +62,18 @@ class _HomePage extends State<HomePage> {
             ),
           ),
         ),
-        actions: const [
-          Icon(
-            Icons.notifications,
-            color: Colors.black,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NotificatinonsPage()));
+            },
           ),
         ],
       ),
@@ -68,8 +81,8 @@ class _HomePage extends State<HomePage> {
         child: PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: _pageController,
-          children:  [
-            PruductsPage(asd:_pageController),
+          children: [
+            PruductsPage(asd: _pageController),
             GoPage(),
             FavPage(),
             bucketPage(),
@@ -77,6 +90,8 @@ class _HomePage extends State<HomePage> {
             ManCatogry(),
             WomanCatogry(),
             ElectronicCatogry(),
+            SupermarketCatogry(),
+            SportCatogry(),
           ],
         ),
       ),

@@ -49,11 +49,20 @@ class _PruductsPageState extends State<PruductsPage> {
   void openWomanCatogry() {
     widget.asd.jumpToPage(6);
   }
+
   void openElectroCatogry() {
     widget.asd.jumpToPage(7);
   }
 
-@override
+  void openSupermarketCatogry() {
+    widget.asd.jumpToPage(8);
+  }
+
+  void openSportCatogry() {
+    widget.asd.jumpToPage(9);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -76,6 +85,15 @@ class _PruductsPageState extends State<PruductsPage> {
                     onPressed: openElectroCatogry,
                     child: const Text("Elektronik"),
                   ),
+                  ElevatedButton(
+                    onPressed: openSupermarketCatogry,
+                    child: const Text("super market"),
+                  ),
+                  ElevatedButton(
+                    onPressed: openSportCatogry,
+                    child: const Text("spor"),
+                  ),
+
                   // Buraya istediğiniz kadar buton ekleyebilirsiniz
                 ],
               ),
