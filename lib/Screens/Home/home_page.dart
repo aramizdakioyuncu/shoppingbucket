@@ -6,6 +6,7 @@ import 'package:shoppingbucket/Screens/Home/NotificationButton_page.dart';
 import 'package:shoppingbucket/Screens/Products/Sport_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/electronic_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/man_catogry.dart';
+import 'package:shoppingbucket/Screens/Products/music_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/products_page.dart';
 import 'package:shoppingbucket/Screens/Products/supermarket_catogry.dart';
 import 'package:shoppingbucket/Screens/Products/woman_catogry.dart';
@@ -29,8 +30,6 @@ class _HomePage extends State<HomePage> {
       _pageController.jumpToPage(page);
     });
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +91,7 @@ class _HomePage extends State<HomePage> {
             ElectronicCatogry(),
             SupermarketCatogry(),
             SportCatogry(),
+            MusicCatogry(),
           ],
         ),
       ),

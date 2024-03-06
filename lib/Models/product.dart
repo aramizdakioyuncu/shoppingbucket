@@ -49,4 +49,6 @@ class Product {
       ),
     );
   }
+
+  void markaCard() {}
 }

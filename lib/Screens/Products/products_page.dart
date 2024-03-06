@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingbucket/Models/marka.dart';
 import 'package:shoppingbucket/Models/product.dart';
 
 class PruductsPage extends StatefulWidget {
@@ -10,11 +11,13 @@ class PruductsPage extends StatefulWidget {
 
 class _PruductsPageState extends State<PruductsPage> {
   List<Product> urunler = [];
+  List<Marka> markalar = [];
 
   @override
   void initState() {
     super.initState();
     urundoldur();
+    markadoldur();
   }
 
   void urundoldur() {
@@ -33,6 +36,29 @@ class _PruductsPageState extends State<PruductsPage> {
     urunler.add(
       Product("Fıstık", "Kişisel lkullanım için", 5,
           "https://static.ticimax.cloud/cdn-cgi/image/width=700,quality=85/54612/uploads/urunresimleri/buyuk/kabuklu-antep-fistik-karakoy-gulluoglu-9b79-e.jpg"),
+    );
+  }
+
+  void markadoldur() {
+    markalar.add(
+      Marka(
+          "https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_of_Mavi.png"),
+    );
+    markalar.add(
+      Marka(
+          "https://upload.wikimedia.org/wikipedia/commons/9/94/Old_Nike_logo.jpg"),
+    );
+    markalar.add(
+      Marka(
+          "https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_of_Mavi.png"),
+    );
+    markalar.add(
+      Marka(
+          "https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_of_Mavi.png"),
+    );
+    markalar.add(
+      Marka(
+          "https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_of_Mavi.png"),
     );
   }
 
@@ -93,8 +119,6 @@ class _PruductsPageState extends State<PruductsPage> {
                     onPressed: openSportCatogry,
                     child: const Text("spor"),
                   ),
-
-                  // Buraya istediğiniz kadar buton ekleyebilirsiniz
                 ],
               ),
             ),
@@ -107,9 +131,25 @@ class _PruductsPageState extends State<PruductsPage> {
                   return urunler[index].productCard();
                 },
               ),
-            ),
-            const Text("Anasayfa"),
-            SizedBox(
+            ),  SizedBox(
+              height: 220,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: urunler.length,
+                itemBuilder: (context, index) {
+                  return urunler[index].productCard();
+                },
+              ),
+            ),  SizedBox(
+              height: 220,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: urunler.length,
+                itemBuilder: (context, index) {
+                  return urunler[index].productCard();
+                },
+              ),
+            ),  SizedBox(
               height: 220,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -119,14 +159,13 @@ class _PruductsPageState extends State<PruductsPage> {
                 },
               ),
             ),
-            const Text("Diğer İçerikler"),
             SizedBox(
-              height: 220,
+              height: 450,
               child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: urunler.length,
+                scrollDirection: Axis.vertical,
+                itemCount: markalar.length,
                 itemBuilder: (context, index) {
-                  return urunler[index].productCard();
+                  return markalar[index].markaCard();
                 },
               ),
             ),
